@@ -16,7 +16,7 @@ public class MusicManager : MonoBehaviour {
 
 	void Start() {
 		audioSource = GetComponent<AudioSource> ();
-
+		SetVolume (PlayerPrefsManager.GetMasterVolume ());
 		// Load the splash sreen music here
 		Play (levelMusicChange [0], false);
 	}
@@ -65,5 +65,13 @@ public class MusicManager : MonoBehaviour {
 
 			Debug.Log ("Playing " + clip.ToString());
 		}
+	}
+
+	public void SetVolume(float volume) {
+		if (volume == audioSource.volume) {
+			return;
+		}
+		audioSource.volume = volume;
+		Debug.Log ("set volume to " + volume.ToString());
 	}
 }
