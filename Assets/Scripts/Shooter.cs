@@ -6,7 +6,16 @@ public class Shooter : MonoBehaviour {
 
 	public GameObject projectile;
 	public GameObject gun;
-	public GameObject projectileParent;
+
+	GameObject projectileParent;
+
+	void Start() {
+		projectileParent = GameObject.Find("Projectiles");
+
+		if (!projectileParent) {
+			projectileParent = new GameObject ("Projectiles");
+		}
+	}
 
 	void Fire() {
 		GameObject newProjectile = Instantiate(projectile) as GameObject;

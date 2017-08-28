@@ -16,7 +16,7 @@ public class DefenderSelectorButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("Defender selected : " + selectedDefender.name);
+		//Debug.Log ("Defender selected : " + selectedDefender);
 	}
 
 	void OnMouseDown() {
