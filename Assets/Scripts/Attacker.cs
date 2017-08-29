@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent (typeof (Rigidbody2D))]
 public class Attacker : MonoBehaviour {
 
+	[Tooltip("Average number of seconds between appearances")]
+	public float seenEverySeconds;
+
 	const float minSpeed = -1f;
 	const float maxSpeed = 10f;
 	float currentSpeed;
